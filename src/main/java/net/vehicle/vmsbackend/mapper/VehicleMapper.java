@@ -10,6 +10,7 @@ public class VehicleMapper {
 		return new Vehicledto(
 				vehicle.getId(),
 				vehicle.getReg_no(),
+				vehicle.getreg_date(),
 				vehicle.getModel(),
 				vehicle.getCompany(),
 				vehicle.getPurchase_year()
@@ -20,6 +21,7 @@ public class VehicleMapper {
 		return new Vehicle(
 				vehicledto.getId(),
 				vehicledto.getReg_no(),
+				vehicledto.getreg_date(),
 				vehicledto.getModel(),
 				vehicledto.getCompany(),
 				vehicledto.getPurchase_year()

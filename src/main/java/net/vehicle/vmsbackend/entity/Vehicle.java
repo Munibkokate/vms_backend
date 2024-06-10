@@ -1,5 +1,6 @@
 package net.vehicle.vmsbackend.entity;
 
+import java.sql.Date;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,7 +11,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 @Getter
 @Setter
 @NoArgsConstructor
@@ -26,6 +26,9 @@ public class Vehicle {
 	@Column(name = "reg_no",nullable=false, unique = true)
 	private String reg_no;
 	
+	@Column(name = "reg_date")
+	private Date reg_date; 
+	
 	@Column(name = "model")
 	private String model;
 	
@@ -34,14 +37,14 @@ public class Vehicle {
 	
 	@Column(name = "purchase_year")
 	private long purchase_year;
-	
+
     // Default constructor
     public Vehicle() {}
-
     // Constructor with all fields
-    public Vehicle(long id, String reg_no, String model, String company, long purchase_year) {
+    public Vehicle(long id, String reg_no,Date reg_date, String model, String company, long purchase_year) {
         this.id = id;
         this.reg_no = reg_no;
+        this.reg_date = reg_date;
         this.model = model;
         this.company = company;
         this.purchase_year = purchase_year;
@@ -70,6 +73,19 @@ public class Vehicle {
 	public void setReg_no(String reg_no) {
 		this.reg_no = reg_no;
 	}
+	public Date getreg_date() {
+		return reg_date;
+	}
+	public void setreg_date(Date reg_date) {
+		this.reg_date = reg_date;
+	}
+	
+	public Date getReg_date() {
+		return reg_date;
+	}
+	public void setReg_date(Date reg_date) {
+		this.reg_date = reg_date;
+	}
 	public String getCompany() {
 		return company;
 	}
@@ -77,5 +93,6 @@ public class Vehicle {
 		this.company = company;
 	}
 
-}
+	}
+
 
